@@ -1,0 +1,30 @@
+
+<div style="background-image: url(https://img.freepik.com/vecteurs-libre/fond-abstrait-design-moderne_1048-5592.jpg?w=740&t=st=1684331731~exp=1684332331~hmac=7a457928c61a004d0bbdbd75e30931067eaf63c786e457d605c0f1083eea0a72);">
+<h2>Ajouter un congé</h2>
+
+<form [formGroup]="congeForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="type">Type de congé</label>
+    <input type="text" id="type" formControlName="type" placeholder="Type de congé" required>
+    <div *ngIf="congeForm.get('type').invalid && (congeForm.get('type').dirty || congeForm.get('type').touched)">
+      <div *ngIf="!congeForm.value.type">Le type de congé est requis.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="dateDebut">Date de début</label>
+    <input type="date" id="dateDebut" formControlName="dateDebut" required>
+  </div>
+
+  <div class="form-group">
+    <label for="dateFin">Date de fin</label>
+    <input type="date" id="dateFin" formControlName="dateFin" required>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" (click)="onSubmit()">Ajouter</button>
+    <button type="button" (click)="closeDialog()">Annuler</button>
+  </div>
+</form>
+
+</div>

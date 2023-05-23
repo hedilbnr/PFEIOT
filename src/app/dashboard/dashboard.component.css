@@ -1,0 +1,33 @@
+ /* div{
+ background-image:url("https://i.pinimg.com/236x/e5/51/c2/e551c29f710bab43cf0c81ddf2f63376.jpg")!important 
+ 
+} */
+
+  /* .card :hover {
+        scale: 1.4;
+        transition: all ease-in-out 0.2s;
+    } */
+    .card-title {
+      text-shadow: 2px 2px 4px #000000;
+      transform: perspective(500px) rotateX(20deg);
+    }
+    
+    /* table {
+      border-collapse: collapse;
+    }
+    
+    td, th {
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+      color: #333333;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+     */
+                
+   

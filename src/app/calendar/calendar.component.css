@@ -1,0 +1,65 @@
+.demo-app {
+  background-color: rgb(184, 42, 42);
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.demo-app-main {
+  padding: 20px;
+}
+
+.fc {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.fc-day {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.fc-day.fc-has-events {
+  background-color: brown;
+}
+
+.fc-day-top {
+  border-bottom: 1px solid #ddd;
+}
+
+.fc-day-number {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.fc-event {
+  background-color: #007bff;
+  color:#007bff ;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.fc-list-heading {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.fc-list-item-title {
+  margin: 5px 0;
+}
+
+.fc-list-item-time {
+  margin-bottom: 5px;
+}
+
+.fc-list-item-marker {
+  display: none;
+}
+
+.fc-list-empty {
+  text-align: center;
+  margin-top: 20px;
+  color: #777;
+}

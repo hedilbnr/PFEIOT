@@ -1,0 +1,103 @@
+<br>
+
+<div class="employee-card">
+  <mat-card>
+    <!-- <mat-card-header>
+      <div mat-card-avatar class="employee-header-image"></div>
+      <mat-card-title>{{employee?.prenom}}</mat-card-title>
+      <mat-card-subtitle>{{employee?.nom}}</mat-card-subtitle>
+    </mat-card-header> -->
+    <mat-card-content class="content">
+      <!-- <div class="avatar-container">
+        <img [src]="photoUrl" alt="Photo de profil" class="avatar-image">
+      </div> -->
+      <div class="employee-info">
+        <div class="info-row">
+          <div class="info-label">Nom :</div>
+          <div class="info-value">{{employee?.nom}}</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Prénom :</div>
+          <div class="info-value">{{employee?.prenom}}</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Email :</div>
+          <div class="info-value">{{employee?.email}}</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Date de Naissance :</div>
+          <div class="info-value">{{employee?.dateNaiss | date: 'yyyy-MM-dd'}}</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Total heures de travail :</div>
+          <div class="info-value">{{totalWorkHours}}</div>
+        </div>
+      </div>
+      
+      <!-- <ul>
+
+        <h4 style="color: blue; align-content: center;">Table de congés</h4>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Date de début</th>
+              <th scope="col">Date de fin</th>
+              <th scope="col">Type</th>
+              <th scope="col">État</th>
+              <th scope="col">Supprimer le Congé</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of employee?.demandeConges">
+              <td scope="row">{{c?.id}}</td>
+              <td scope="row">{{c.dateDebut | date: 'yyyy-MM-dd'}}</td>
+              <td scope="row">{{c.dateFin | date: 'yyyy-MM-dd'}}</td>
+              <td scope="row">{{c.type}}</td>
+              <td scope="row">{{c.etat ? 'Accepted' : 'Not Accepted'}}</td>
+              <td scope="row">
+                <span class="material-icons" (click)="deleteConge(c.id)" style="color: rgb(255, 0, 0);">delete</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ul> -->
+      <br>
+      <button class="btn btn-info" (click)="openCongeDialog(employee?.id)">Enregistrer un congé</button><br>
+      <br>
+      <button class="btn btn-info" (click)="openEditDialog()">Modifier les données</button>
+      <div class="table-container">
+        <h4 style="color: blue; text-align: center;">Table de congés</h4>
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Date de début</th>
+              <th>Date de fin</th>
+              <th>Type</th>
+              <th>État</th>
+              <th>Supprimer le Congé</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of employee?.demandeConges" class="table-row">
+              <td>{{c?.id}}</td>
+              <td>{{c.dateDebut | date: 'yyyy-MM-dd'}}</td>
+              <td>{{c.dateFin | date: 'yyyy-MM-dd'}}</td>
+              <td>{{c.type}}</td>
+              <td>{{c.etat ? 'Accepted' : 'Not Accepted'}}</td>
+              <td>
+                <span class="material-icons" (click)="deleteConge(c.id)" style="color: rgb(255, 0, 0);">delete</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      
+
+
+    </mat-card-content>
+    <mat-card-actions></mat-card-actions>
+  </mat-card>
+</div>

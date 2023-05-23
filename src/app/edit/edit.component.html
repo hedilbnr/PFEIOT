@@ -1,0 +1,34 @@
+<p>edit works!</p>
+    <h2>Remplir vos données </h2>
+    <div style="width: 70;">
+   
+      <mat-form-field appearance="fill">
+        <mat-label>Nom</mat-label>
+        <input [formControlName]="nom" matInput id="nom">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Prénom</mat-label>
+        <input [formControlName]="prenom" matInput id="prenom">
+      </mat-form-field>
+  
+      <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label> Email</mat-label>
+          <input matInput placeholder="pat@example.com" [formControlName]="email" id="email">
+        </mat-form-field>
+      </div>
+    
+     
+      
+     
+   
+    </div>
+    
+    <div class="example-button-row">
+      <button type="submit" (click)="saveUser()">Sauvgarder </button>
+      <button mat-button (click)=" navigateToEmployeeList()">Quitter </button>
+
+    </div>
+  
+  

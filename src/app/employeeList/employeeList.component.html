@@ -1,0 +1,190 @@
+
+
+<div class="main-content">
+  <div class="container-fluid">
+
+    <div class="text-center">{{ time | date: 'hh:mm:ss a' }}</div>
+
+      <div class="row" style="background-color: rgb(223, 233, 218);">
+          <div class="col-md-12">
+              <div class="card" >
+                  <div class=" card-header card-header-info">
+                    
+
+                      <h4 class=" card-title ">liste d'employés</h4>
+
+                        <button class=" btn btn-secondary" style="float: right;" (click)="openDialog()" >Ajouter un employé </button>
+                        
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-info">
+                                  <th>
+                                      ID
+                                  </th>
+                                  <th>
+                                      Nom
+                                  </th>
+                                  <th>
+                                      Prenom
+                                  </th>
+                                  <th>
+                                      Email
+                                  </th>
+                                  <th>
+                                      Options
+                                  </th>
+                                  
+                                  <!-- <th>
+                                      Statut
+                                  </th> -->
+                                  
+                                  
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let data of users">
+                                    <td>{{data.id}}</td>
+                                    <td>{{ data.nom }}</td>
+                                    <td>{{ data.prenom }}</td>
+                                    <td>{{ data.email }}</td>
+                                    <td (click)="navigateToProfile(data.id)">    
+                                        <span class='material-icons' style="color: rgb(0, 0, 255);">info</span>
+                                        <!-- <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                            <mat-icon>home</mat-icon>
+                                         </button> -->
+                                    <td>     <span class="material-icons" style="color: rgb(88, 209, 233);" (click)="openDialog1(data.id)">edit</span>
+
+                                        <!-- <button mat-raised-button (click)="EditUser(data.id)" (click)="navigateToEdit(data.id)" >Edit</button>            -->
+                                                             </td>
+                                    <td> 
+                                        <!-- <i class="fa-solid fa-trash"
+                                         (click)="deleteUser(data.id)"  ></i> -->
+                                         <span class="material-icons"style="color: rgb(0, 0, 255);" (click)="deleteUser(data.id)">delete</span>
+                                        <!-- <button mat-raised-button  color="primary" (click)="deleteUser(data.id)">Delete</button> -->
+                                    </td>
+                                    <td> 
+                                        <span class="material-icons" style="color: rgb(88, 209, 233);" (click)="openModal()">add_photo_alternate</span>
+                                        <!-- <button mat-raised-button  color="primary" (click)="openModal()">Ajouter Photo</button> -->
+                                    </td>
+
+
+
+
+
+                                    <!-- <td>{{ data.Statut }}</td> -->
+                                </tr>
+                              </tbody>
+                              <!--<tbody>
+                                  <tr>
+                                      <td>
+                                          1
+                                      </td>
+                                      <td>
+                                          Dakota Rice
+                                      </td>
+                                      <td>
+                                          Niger
+                                      </td>
+                                      <td>
+                                          Oud-Turnhout
+                                      </td>
+                                      <td class="text-primary">
+                                          $36,738
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          2
+                                      </td>
+                                      <td>
+                                          Minerva Hooper
+                                      </td>
+                                      <td>
+                                          Curaçao
+                                      </td>
+                                      <td>
+                                          Sinaai-Waas
+                                      </td>
+                                      <td class="text-primary">
+                                          $23,789
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          3
+                                      </td>
+                                      <td>
+                                          Sage Rodriguez
+                                      </td>
+                                      <td>
+                                          Netherlands
+                                      </td>
+                                      <td>
+                                          Baileux
+                                      </td>
+                                      <td class="text-primary">
+                                          $56,142
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          4
+                                      </td>
+                                      <td>
+                                          Philip Chaney
+                                      </td>
+                                      <td>
+                                          Korea, South
+                                      </td>
+                                      <td>
+                                          Overland Park
+                                      </td>
+                                      <td class="text-primary">
+                                          $38,735
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          5
+                                      </td>
+                                      <td>
+                                          Doris Greene
+                                      </td>
+                                      <td>
+                                          Malawi
+                                      </td>
+                                      <td>
+                                          Feldkirchen in Kärnten
+                                      </td>
+                                      <td class="text-primary">
+                                          $63,542
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          6
+                                      </td>
+                                      <td>
+                                          Mason Porter
+                                      </td>
+                                      <td>
+                                          Chile
+                                      </td>
+                                      <td>
+                                          Gloucester
+                                      </td>
+                                      <td class="text-primary">
+                                          $78,615
+                                      </td>
+                                  </tr>
+                              </tbody>-->
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+</div>

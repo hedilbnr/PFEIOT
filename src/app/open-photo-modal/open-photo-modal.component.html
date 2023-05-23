@@ -1,0 +1,12 @@
+<!-- <form  [formGroup]="userForm" (ngSubmit)="onClick()">
+    <input type="text" #subject placeholder="Sujet">
+    <input type="file" #fileInput>
+    <button type="submit">Envoyer</button>
+  </form> -->
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()"class="modal-form" >
+    <input type="text" #subject name="subject" placeholder="Sujet" formControlName="subject">
+    <input type="file" #fileInput name="fileInput" formControlName="fileInput" id="formFile" (change)="this.onFilechange($event)">
+    <button type="submit" (click)="onSubmit()" >Envoyer </button>
+  </form> 
+  
+  

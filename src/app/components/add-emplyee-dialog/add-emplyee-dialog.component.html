@@ -1,0 +1,52 @@
+<div class="dialog">
+    <h2>Remplir vos données </h2>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="" formControlName="nom" required>
+        <mat-error *ngIf="!userForm.value.nom">nom is required</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Prénom</mat-label>
+        <input matInput placeholder="" formControlName="prenom" required>
+        <mat-error *ngIf="!userForm.value.prenom">prenom is required</mat-error>
+      </mat-form-field>
+  
+      <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label> Email</mat-label>
+          <input matInput placeholder="pat@example.com" formControlName="email" required>
+          <mat-error *ngIf="!userForm.value.email">email is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label> Mot De Passe</mat-label>
+          <input matInput placeholder="password" formControlName="password" required>
+          <mat-error *ngIf="!userForm.value.mot_de_passe">password is required</mat-error>
+        </mat-form-field>
+      </div>
+      <!-- <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Date de naissance</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dateNaiss">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+       -->
+       <mat-form-field appearance="fill"> 
+        <mat-label>Rôle</mat-label>
+        <mat-select formControlName="role">
+          <mat-option *ngFor="let role of roles" [value]="role">
+            {{role.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> 
+    </form>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" type="submit"(click)="onSubmit()"  >Sauvgarder </button>
+      <button mat-raised-button color="primary"  (click)="closeDialog()" >Quitter</button>
+    </div>
+  </div>
+  

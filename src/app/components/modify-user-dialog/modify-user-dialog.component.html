@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Modifier l'utilisateur</h2>
+<div mat-dialog-content>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="Nom" [(ngModel)]="user.nom" name="nom" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Prénom" [(ngModel)]="user.prenom" name="prenom" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email" [(ngModel)]="user.email" name="email" required>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Annuler</button>
+  <button mat-button color="primary" type="submit" (click)="onSubmit()">Enregistrer</button>
+</div>

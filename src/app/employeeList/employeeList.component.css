@@ -1,0 +1,134 @@
+
+.fontawesomeicon::before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+ }
+
+.Eye::before {
+   font: var(--fa-font-solid);
+    content: ' \f06e';
+ }
+ td{
+   cursor: pointer;
+
+ }
+ section {
+   display: table;
+ }
+ 
+ .example-label {
+   display: table-cell;
+   font-size: 14px;
+   margin-left: 8px;
+   min-width: 120px;
+ }
+ 
+ .example-button-row {
+   display: table-cell;
+   max-width: 600px;
+ }
+ 
+ .example-button-row .mat-mdc-button-base {
+   margin: 8px 8px 8px 0;
+ }
+ 
+ .example-flex-container {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+ }
+ 
+ .example-button-container {
+   display: flex;
+   justify-content: center;
+   width: 120px;
+ }
+ .card-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.employee-list {
+  list-style: none;
+  padding: 0;
+}
+
+.employee-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.employee-item:last-child {
+  border-bottom: none;
+}
+
+.employee-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.employee-details {
+  flex: 1;
+}
+
+.employee-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 4px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.employee-email {
+  font-size: 14px;
+  color: #777;
+}
+
+.employee-role {
+  font-size: 14px;
+  color: #555;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary {
+  background-color: #f1f1f1;
+  color:#6F59E8 ;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #e0e0e0;
+  color: #6F59E8 ;
+}
+
+.btn-secondary:focus {
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary:active {
+  background-color: #ccc;
+  color:#6F59E8 ;
+}

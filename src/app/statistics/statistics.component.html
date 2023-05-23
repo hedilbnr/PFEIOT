@@ -1,0 +1,110 @@
+
+<!-- <div>
+
+  <ngx-charts-bar-vertical
+    [view]="[500, 400]"
+    [results]="single"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    xAxisLabel="Pourcentage"
+    yAxisLabel="Statut"
+  ></ngx-charts-bar-vertical>
+</div> -->
+<div style="margin-top: 100px;">
+<ngx-charts-bar-vertical-2d
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="multi"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [legendTitle]="legendTitle"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)">
+</ngx-charts-bar-vertical-2d>
+</div>
+
+
+<!-- <br>
+<br>
+<br>
+<br>
+<br>
+<div >
+<ngx-charts-bar-vertical-2d style="margin-left: auto;"
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="multi"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [legendTitle]="legendTitle"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)">
+</ngx-charts-bar-vertical-2d>
+</div>
+------
+<div>
+  <ngx-charts-advanced-pie-chart
+  [view]="view2"
+  [scheme]="colorScheme"
+  [results]="single"
+  [gradient]="gradient"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)"
+  >
+</ngx-charts-advanced-pie-chart>
+</div> -->
+<!-- <div>
+
+  
+  <div class="container">
+    <h1>Statistiques de travail par employé</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Employé</th>
+          <th *ngFor="let day of days">{{day}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{employee.name}}</td>
+          <td *ngFor="let day of days">{{employee.work[day]}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h1>Retards par employé par jour</h1>
+    <ngx-charts-bar-vertical
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="retards"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [legendTitle]="'Employé'"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="'Jour'"
+      [yAxisLabel]="'Retard (en minutes)'"
+      [roundEdges]="true"
+      (select)="onSelect($event)">
+    </ngx-charts-bar-vertical>
+  </div>
+  
+
+</div> -->
+

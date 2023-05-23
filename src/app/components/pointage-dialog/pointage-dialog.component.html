@@ -1,0 +1,10 @@
+<div>
+<br>  
+<h2 class="three-d">Les pointages des employés</h2>
+
+<ul >
+  <li *ngFor="let item of allPointages">
+    {{ item.heurePointage |date :'yyyy-MM-dd HH:mm'}} 
+  </li>
+</ul>
+</div>

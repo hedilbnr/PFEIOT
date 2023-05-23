@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Add User</h2>
+<mat-dialog-content>
+  <form #dialogForm="ngForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="Name" name="nom" [formControl]="nom"  required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Prenom" name="prenom" [formControl]="prenom" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="email" placeholder="Email" name="email" [formControl]="email" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Date de naissance" name="dateNaiss" [formControl]="dateNaiss" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button [disabled]="!dialogForm.valid" (click)="onSubmit()">Submit</button>
+</mat-dialog-actions>
