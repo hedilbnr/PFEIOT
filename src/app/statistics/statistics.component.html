@@ -10,11 +10,11 @@
     yAxisLabel="Statut"
   ></ngx-charts-bar-vertical>
 </div> -->
-<div style="margin-top: 100px;">
-<ngx-charts-bar-vertical-2d
+<div style="margin-top: 100px;" *ngIf="listOfStat.length && displayStat">
+<ngx-charts-bar-vertical-2d 
   [view]="view"
   [scheme]="colorScheme"
-  [results]="multi"
+  [results]="listOfStat"
   [gradient]="gradient"
   [xAxis]="showXAxis"
   [yAxis]="showYAxis"

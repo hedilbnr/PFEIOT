@@ -21,6 +21,7 @@ export class EditComponent implements OnInit {
   demaneConges: string;
   photo: string;
   mot_de_passe: string;
+  role: String;
   constructor(private employeeService: EmployeeService, private router: Router) { }
 
   ngOnInit(): void {
@@ -65,6 +66,7 @@ export class EditComponent implements OnInit {
       this.dateNaiss.value,
       this.photo,
       this.demaneConges,
+      this.role
      
     )
   }

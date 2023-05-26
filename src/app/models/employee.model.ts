@@ -1,3 +1,4 @@
+import { RowOutlet } from "@angular/cdk/table";
 import { Conge } from "./congee.model";
 
 export class Employee {
@@ -10,6 +11,8 @@ export class Employee {
     pointages:number;
     demandeConges: Conge;
     mot_de_passe: string;
+    role: String;
+   
 
     constructor(
         employeeId:number,
@@ -19,7 +22,9 @@ export class Employee {
         mot_de_passe:string,
         dateNaiss: string,
         photo:string,
-        demandeConges:any
+        demandeConges:any,
+        role : String
+        
        
     ){
         this.id =  employeeId
@@ -30,6 +35,8 @@ export class Employee {
         this.dateNaiss = dateNaiss
         this.photo=photo
         this.demandeConges=demandeConges
+        this.role=role
+        
        
     }
     static create(){

@@ -148,7 +148,7 @@ export class CalendarComponent {
         
         if (currentDate == newdate && c.etat){
           //console.log(" ------ date fin ----- "+c.dateFin);
-          let x={ title: c.type, date: c.dateDebut}
+          let x={ title: c.id, date: c.dateDebut}
           newEvents.push(x)
         }
        
@@ -160,11 +160,19 @@ export class CalendarComponent {
   }
 
 
+
   
   getEmployeeByID(id:any) {
     console.log("++++++++++++++++++++ "+id);
     this.employeeService.getEmployeeByID(id).subscribe(data => {
-      this.employee = data;
+      // this.employee = data;
+        this.employee = data;
+        let newEvents = [];
+        for (let c of this.employee.demandeConges) {
+          let x = { title: this.employee.prenom, date: c.dateDebut };
+          newEvents.push(x);
+        }
+        this.calendarOptions.events = newEvents;
       //console.log('test-----'+this.employee.demandeConges[0].dateDebut)
       // let newEvents = [];
       // for (let c of this.employee.demandeConges){

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CongeService } from '../../services/conge.service';
 import { multi } from '../data';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { PointageService } from '../../services/pointage.service';
 
 @Component({
   selector: 'app-statistics',
@@ -23,11 +24,18 @@ export class StatisticsComponent implements OnInit {
   colorScheme = {
     domain: ['#36D1B2', '#B27DF7', '#AAAAAA']
   };
+  listOfStat: any[];
+  displayStat: boolean=false;
 
-  constructor(private congeService: CongeService) { Object.assign(this, { multi }); }
+  constructor(private congeService: CongeService, private pointageService: PointageService) { 
+    
+    Object.assign(this, { multi }); 
+    this.getStat()
+  }
 
   ngOnInit() {
-    this.getPourcentages();
+    //this.getPourcentages();
+
   }
 
   getPourcentages() {
@@ -60,4 +68,43 @@ export class StatisticsComponent implements OnInit {
   onDeactivate(data): void {
     console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
+
+  getStat() {
+
+    this.listOfStat=[]
+
+    for (let i = 0; i < 6; i++) {
+      let dat = new Date()
+      let datetoSend = dat.getFullYear() + "-" + (dat.getMonth() + 1) + "-" + (dat.getDate() - i)
+      
+      this.pointageService.getPourcentageForStatRetard(datetoSend).subscribe(pourcentage => {
+        let json={
+          name:datetoSend,
+          series: [
+            {
+              name: "En retard",
+              value: Math.round(+pourcentage)
+            },
+     
+          ]
+          
+        }
+        this.listOfStat.push(json)
+
+
+
+      })
+      setTimeout(()=>{       
+        this.listOfStat.reverse()                 // <<<---using ()=> syntax
+        this.displayStat = true;
+
+        console.log(this.listOfStat)
+     }, 3000);
+     
+    }
+   
+   
+  }
+
+
 }

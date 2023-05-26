@@ -33,6 +33,10 @@ export class PointageService {
   getPourcentageRetards(horairesPredefinis: Date[]) {
     return this.httpClient.get<number>(`${this.baseurl}/pointage/pourcentage-retards`, { params: { horairesPredefinis: horairesPredefinis.toString() } });
   }
+
+  getPourcentageForStatRetard(date) {
+    return this.httpClient.get<any>(`${this.baseurl}demandeconges/pourcentageRetard/`+date );
+  }
   getHorairesPredefinis() {
     return this.httpClient.get<Date[]>(`${this.baseurl}/pointage/horaires-predefinis`);
   }

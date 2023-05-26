@@ -1,0 +1,58 @@
+/* Animation pour le titre */
+h1.mat-dialog-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Animation pour le contenu */
+  .mat-dialog-content {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    animation: slideIn 0.5s ease-in-out;
+  }
+  
+  /* Animation pour les actions */
+  .mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Animation pour les boutons */
+  .mat-dialog-actions button {
+    margin-left: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    animation: slideIn 0.5s ease-in-out;
+  }
+  
+  /* Animation de fondu */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Animation de glissement */
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

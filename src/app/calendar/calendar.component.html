@@ -4,9 +4,13 @@
     <div class='demo-app-main'>
       <full-calendar *ngIf='calendarVisible' [options]='calendarOptions'>
         <ng-template #eventContent let-arg>
-          <b>{{ arg.timeText }}</b>
-          <i>{{ arg.event.title }}</i>
+          <!-- <b>{{ arg.timeText }}</b> -->
+          <!-- <i>{{ arg.event.title }}</i> -->
+          <i>{{ arg.event.title }} - {{ arg.event.extendedProps.nom }}{{ arg.event.extendedProps.prenom }}</i>
+
         </ng-template>
+       
+        
       </full-calendar>
     </div>
   

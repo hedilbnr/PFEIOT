@@ -28,6 +28,10 @@ export class CongeService {
   getEtatConge(): Observable<any>{
     return this.httpClient.get(this.baseurl+'demandeconges/etat')
   }
+  editConge(id:number ,demandeconge :any ):Observable<any>{
+    return this.httpClient.put(this.baseurl+'demandeconges/etat/' +id , demandeconge)
+
+  }
   // deleteConge(id: number): Observable<void> {
   //   const url = `${this.apiUrl}/${id}`;
   //   return this.httpClient.delete<void>(url);

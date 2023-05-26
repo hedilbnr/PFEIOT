@@ -14,6 +14,7 @@ import { DeletedialogComponent } from '../deletedialog/deletedialog.component';
 import { EditEmplyeeComponent } from '../components/edit-emplyee/edit-emplyee.component';
 import { AuthService } from '../../services/auth.service';
 import { ComprefaceService } from '../../services/compreface.service';
+import { Role } from '../models/role.model';
 
 
 
@@ -28,6 +29,8 @@ export class EmployeeProfileComponent implements OnInit {
   userSubject: string;
   congéAjouté: any;
   conge: Conge ;
+  role:string;
+  userRole: string;
 
   onCongéAjouté(congé: any) {
    
@@ -77,10 +80,11 @@ export class EmployeeProfileComponent implements OnInit {
   }
 
   constructor(private comprefaceService:ComprefaceService  ,private congeService:CongeService ,private route: ActivatedRoute, private employeeService: EmployeeService ,private pointageService:PointageService,private dialog: MatDialog,private authService: AuthService) {
- 
-      /**this.route.params.subscribe((params: Params) => {
+    this.getRole();
+      this.route.params.subscribe((params: Params) => {
         this.employeeID = params['id'];
-      })*/
+        
+      })
       // this.totalWorkHours = this.calculateTotalWorkHours(this.pointages);
 
    }
@@ -101,6 +105,12 @@ export class EmployeeProfileComponent implements OnInit {
   //     );
   //   }
   // }
+  getRole() {
+    this.userRole = localStorage.getItem('ROLE');
+    console.log("xxxxxxxxxxxxxxxxxxxxxxx " + this.userRole);
+    return this.userRole;
+   
+  }
   deleteConge(congeId: number) {
       this.congeService.deleteConge(congeId).subscribe(
         () => {
@@ -144,7 +154,7 @@ export class EmployeeProfileComponent implements OnInit {
     });
   }
   generateData(){
-    this.employeeID=localStorage.getItem('IDUSER')
+    //this.employeeID=localStorage.getItem('IDUSER')
     this.getEmployeeByID(this.employeeID);
     this.getAllpointages(this.employeeID)
   }
@@ -166,6 +176,17 @@ export class EmployeeProfileComponent implements OnInit {
    
 
   }
+  editCon(id:number, demandeconge : any){
+    if (demandeconge.etat) demandeconge.etat=false;
+    else demandeconge.etat=true;
+    this.congeService.editConge(id , demandeconge).subscribe(data => {
+      console.log("edinet data ========== "+data) ;
+    })
+    //this.router.navigate(['employee-profile', id]);
+
+    }
+   
+
   getPhotoUrlBySubject(subject: string) {
     this.comprefaceService.getPhotoUrlBySubject(subject)
       .then((photoUrl: string) => {
@@ -180,7 +201,7 @@ export class EmployeeProfileComponent implements OnInit {
     this.employeeService.getEmployeeByID(id).subscribe(data => {
       this.employee = data;
       this.photoUrl = `assets/images/employees/${this.employee.photo}`;
-      console.log('test',this.employee)
+      console.log('+++++++++/*************--------',this.employee)
 
       //console.log(this.employee.pointages)
     },(err)=>{

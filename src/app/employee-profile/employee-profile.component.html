@@ -85,7 +85,11 @@
               <td>{{c.dateDebut | date: 'yyyy-MM-dd'}}</td>
               <td>{{c.dateFin | date: 'yyyy-MM-dd'}}</td>
               <td>{{c.type}}</td>
-              <td>{{c.etat ? 'Accepted' : 'Not Accepted'}}</td>
+              <td>
+                <div *ngIf="userRole=='administrateur'; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock><button (click)="editCon(c.id,c)" >Etat</button>{{c.etat ? 'Accepted' : 'Not Accepted'}}</ng-template>
+                <ng-template #elseBlock>{{c.etat ? 'Accepted' : 'Not Accepted'}}.</ng-template>
+                 </td>
               <td>
                 <span class="material-icons" (click)="deleteConge(c.id)" style="color: rgb(255, 0, 0);">delete</span>
               </td>

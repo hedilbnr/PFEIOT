@@ -12,10 +12,7 @@ export var multi = [
           "name": "Au moment",
           "value": 60
         },
-        {
-          "name": "En retard",
-          "value": 50
-        }
+ 
       ]
     },
   
@@ -26,10 +23,7 @@ export var multi = [
           "name": "Au moment",
           "value": 58
         },
-        {
-          "name": "En retard",
-          "value": 30
-        }
+ 
       ]
     },
   
@@ -40,10 +34,7 @@ export var multi = [
           "name": "Au moment",
           "value": 35
         },
-        {
-          "name": "En retard",
-          "value": 20
-        }
+  
       ]
     },
     {
@@ -53,10 +44,7 @@ export var multi = [
             "name": "Au moment",
             "value": 40
           },
-          {
-            "name": "En retard",
-            "value": 10
-          }
+
         ]
       },
       {
@@ -66,10 +54,7 @@ export var multi = [
             "name": "Au moment",
             "value": 12
           },
-          {
-            "name": "En retard",
-            "value": 55
-          }
+
         ]
       },
      
