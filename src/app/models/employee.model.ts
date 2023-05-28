@@ -8,11 +8,11 @@ export class Employee {
     email:string;
     dateNaiss:string;
     photo:string;
-    pointages:number;
+    pointages:any[];
     demandeConges: Conge;
     mot_de_passe: string;
     role: String;
-   
+  
 
     constructor(
         employeeId:number,
@@ -24,6 +24,7 @@ export class Employee {
         photo:string,
         demandeConges:any,
         role : String
+
         
        
     ){
@@ -36,8 +37,8 @@ export class Employee {
         this.photo=photo
         this.demandeConges=demandeConges
         this.role=role
-        
        
+
     }
     static create(){
         return Object.create(this.prototype)

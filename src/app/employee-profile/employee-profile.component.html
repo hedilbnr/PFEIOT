@@ -1,5 +1,6 @@
 <br>
-
+<br>
+<br>
 <div class="employee-card">
   <mat-card>
     <!-- <mat-card-header>
@@ -30,7 +31,18 @@
         </div>
         <div class="info-row">
           <div class="info-label">Total heures de travail :</div>
-          <div class="info-value">{{totalWorkHours}}</div>
+          <div class="info-value">{{totalWorkHours}} 9 heures </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Pointage:</div>
+          <div class="info-value">
+            <table>
+            <tr *ngFor="let ptg of allPointages" class="table-row">
+              <td>{{ptg?.id}}</td>
+            </tr>
+            
+          </table>
+           </div>
         </div>
       </div>
       
@@ -63,9 +75,9 @@
         </table>
       </ul> -->
       <br>
-      <button class="btn btn-info" (click)="openCongeDialog(employee?.id)">Enregistrer un congé</button><br>
+       <button class="btn btn-info" (click)="openCongeDialog(employee?.id)">Enregistrer un congé</button><br> 
       <br>
-      <button class="btn btn-info" (click)="openEditDialog()">Modifier les données</button>
+      <button class="btn btn-info" (click)="openEditDialog()">Modifier les données</button> 
       <div class="table-container">
         <h4 style="color: blue; text-align: center;">Table de congés</h4>
         <table class="custom-table">
@@ -87,10 +99,13 @@
               <td>{{c.type}}</td>
               <td>
                 <div *ngIf="userRole=='administrateur'; then thenBlock else elseBlock"></div>
-                <ng-template #thenBlock><button (click)="editCon(c.id,c)" >Etat</button>{{c.etat ? 'Accepted' : 'Not Accepted'}}</ng-template>
-                <ng-template #elseBlock>{{c.etat ? 'Accepted' : 'Not Accepted'}}.</ng-template>
+                <ng-template #thenBlock><button class="btn btn-info" (click)="editCon(c.id,c)" >Etat</button>{{c.etat ? 'Accepté' : 'En Attente'}}</ng-template>
+                <ng-template #elseBlock>{{c.etat ? 'Accepté' : 'En Attente'}}.</ng-template>
                  </td>
               <td>
+               
+                
+                
                 <span class="material-icons" (click)="deleteConge(c.id)" style="color: rgb(255, 0, 0);">delete</span>
               </td>
             </tr>

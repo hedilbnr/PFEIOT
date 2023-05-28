@@ -80,11 +80,14 @@ export class EmployeeProfileComponent implements OnInit {
   }
 
   constructor(private comprefaceService:ComprefaceService  ,private congeService:CongeService ,private route: ActivatedRoute, private employeeService: EmployeeService ,private pointageService:PointageService,private dialog: MatDialog,private authService: AuthService) {
+   
     this.getRole();
       this.route.params.subscribe((params: Params) => {
         this.employeeID = params['id'];
         
       })
+      //this.getAllpointages(this.employeeID)
+      //print()
       // this.totalWorkHours = this.calculateTotalWorkHours(this.pointages);
 
    }
@@ -156,7 +159,7 @@ export class EmployeeProfileComponent implements OnInit {
   generateData(){
     //this.employeeID=localStorage.getItem('IDUSER')
     this.getEmployeeByID(this.employeeID);
-    this.getAllpointages(this.employeeID)
+    //this.getAllpointages(this.employeeID)
   }
 
   ngOnInit() {
@@ -201,8 +204,9 @@ export class EmployeeProfileComponent implements OnInit {
     this.employeeService.getEmployeeByID(id).subscribe(data => {
       this.employee = data;
       this.photoUrl = `assets/images/employees/${this.employee.photo}`;
-      console.log('+++++++++/*************--------',this.employee)
-
+      console.log('+++++++++/*************--------',this.employee.pointages)
+      this.allPointages=this.employee.pointages;
+      console.log('--------------------------', this.allPointages)
       //console.log(this.employee.pointages)
     },(err)=>{
       console.log(err);
@@ -231,6 +235,7 @@ export class EmployeeProfileComponent implements OnInit {
     this.pointageService.getALLpointages(employeeID)
     .subscribe(data=>{
       this.allPointages=data;
+      console.log(" %%%%%%%%%%%%%% "+data)
       if(data){
         //this.totalWorkHours = this.calculateTotalWorkHours(this.allPointages);
         if(this.allPointages.length > 1){
